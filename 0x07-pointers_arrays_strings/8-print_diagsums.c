@@ -12,20 +12,20 @@
  * @size: The size of the matrix.                                                                                                  
  */
 
-
 void print_diagsums(int *a, int size)
 {
-	int index, S1, S2;
+	int i;
 
-	S1 = 0;
-	S2 = 0;
+	unsigned int sum, sum1;
 
-	for (index = 0; index < (size * size); i++)
+	sum = 0;
+	sum1 = 0;
+
+	for (i = 0; i < size; i++)
 	{
-		if (index % (size + 1) == 0)
-			S1 += a[index];
-		if (index % (size - 1) == 0 && i != 0 && i < size * size - 1)
-			S2 += a[index];
+		sum += a[(size * i) + i];
+		sum1 += a[(size * (i + 1)) - (i + 1)];
 	}
-	printf("%d, %d\n", S1, S2);
+
+	printf("%d, %d\n", sum, sum1);
 }
