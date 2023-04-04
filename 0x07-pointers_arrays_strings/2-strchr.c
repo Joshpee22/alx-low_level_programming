@@ -8,12 +8,15 @@
   * @s: The string targeted
   * Return: returns a pointer to the first occurence of c
   */
+#include "main.h"
+
 char *_strchr(char *s, char c)
 {
-	int i;
-	do {
-		if (s[i] == c)
+	for ( ; *s; ++s)
+	{
+		if (*s == c)
 			return (s);
-	} while (*s++);
-	return (0);
+	}
+	return (*s == c ? s : NULL);
 }
+
