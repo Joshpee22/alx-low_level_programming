@@ -4,23 +4,15 @@
  * factorial - function that returns  the factorial or a given number
  * @n:int
  * Return:int
+ * Return: x
  */
-int factorial(int n);
 
+int factorial(int n)
 {
-	int x;
-
-	if (n == 0)
-	{
-		return (1);
-	}
-	else if (n < 0)
-	{
+	if (n < 0)
 		return (-1);
-	}
+	else if (n == 0)
+		return (1);
 	else
-	{
-		x = n * factorial(n - 1);
-	}
-			return (x);
-
+		return (n * factorial(n - 1));
+}
