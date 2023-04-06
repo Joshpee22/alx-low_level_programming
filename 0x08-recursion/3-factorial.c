@@ -1,4 +1,3 @@
-25 lines (23 sloc)  243 Bytes
 #include "main.h"
 /**
  * factorial - function that returns  the factorial or a given number
