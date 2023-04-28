@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- *_strlen - return the length of a string
- *@str: string
- *Return: length
- */
+ * new_node - adds a new node at the beginning of a list_t list.
+ * @str: string to set in the new node.
+ * Return: address of the new element, or NULL if it failed
+ **/
 
 int _strlen_recursion(char *s);
 
@@ -32,9 +32,8 @@ list_t *add_node(list_t **head, const char *str)
 }
 
 /**
- * _strlen_recursion - returns length of a strng.
- * @s: strng
- * Return:return the length of the  @s
+ * _strlen_recursion - returns the length of a string.
+ * Return: length of _strlen_recursion.
  */
 int _strlen_recursion(char *s)
 {
