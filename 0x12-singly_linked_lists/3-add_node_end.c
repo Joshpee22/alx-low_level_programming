@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * add_node_end - adds a new node at the end of a list_t list.
- * @head: pointer to the first element of the list.
- * @str: string to set in the new node.
- * Return: address of the new element, or NULL if it failed
- **/
+ *add_node_end - adds node at the end of the list
+ *@head: linked list
+ *@str: string
+ *Return: new node
+ */
 int _strlen_recursion(char *s);
 
 list_t *add_node_end(list_t **head, const char *str)
@@ -40,7 +40,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 /**
  * _strlen_recursion - returns the length of a string.
- * @s: string.
+ * @str: string.
  * Return: length of @s.
  */
 int _strlen_recursion(char *s)
