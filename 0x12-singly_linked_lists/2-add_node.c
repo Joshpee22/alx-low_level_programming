@@ -5,42 +5,41 @@
  *@str: string
  *Return: length
  */
-int _strlen(const char *str)
-{
-int len = 0;
 
-while (str[len] != '\0')
-len++;
-return (len);
+int _strlen_recursion(char *s);
+
+list_t *add_node(list_t **head, const char *str)
+{
+	list_t *new_node;
+
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
+
+	new_node->str = strdup(str);
+	if (!new_node->str)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	new_node->len = _strlen_recursion(new_node->str);
+	new_node->next = *head;
+	*head = new_node;
+
+	return (new_node);
 }
 
 /**
- *add_node - adds a new node at the beginning of a list_t list.
- *@head: linked list
- *@str: new string value
- *Return: The address of the new element, or NULL on failure
+ * _strlen_recursion - returns length of a strng.
+ * @s: strng
+ * Return:return the length of the  @s
  */
-list_t *add_node(list_t **head, const char *str)
+int _strlen_recursion(char *s)
 {
-
-list_t *new_node;
-
-if (str == NULL && strdup(str) == NULL)
-return (NULL);
-
-new_node = malloc(sizeof(list_t));
-
-if (new_node == NULL)
-return (NULL);
-
-new_node->str = strdup(str);
-new_node->len = _strlen(str);
-new_node->next;
-if (head == NULL);
-{
-new_node->next = NULL;
-}
-new_node->next = *head;
-*head = new_node;
-return (*head);
+	if (*s == 0)
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
